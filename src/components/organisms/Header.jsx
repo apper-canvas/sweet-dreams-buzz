@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import ApperIcon from "@/components/ApperIcon";
-import SearchBar from "@/components/molecules/SearchBar";
 import Button from "@/components/atoms/Button";
+import SearchBar from "@/components/molecules/SearchBar";
 import { useCart } from "@/hooks/CartProvider";
 
 const Header = () => {
@@ -12,14 +12,14 @@ const Header = () => {
   const location = useLocation();
   const { getCartItemCount } = useCart();
 
-  const navigation = [
+const navigation = [
     { name: "Home", href: "/" },
     { name: "Wedding Cakes", href: "/category/Wedding Cakes" },
     { name: "Birthday Cakes", href: "/category/Birthday Cakes" },
     { name: "Cupcakes", href: "/category/Cupcakes" },
     { name: "Pastries", href: "/category/Pastries" },
     { name: "Custom Orders", href: "/category/Custom Orders" },
-    { name: "Gallery", href: "/gallery" }
+    { name: "Gallery", href: "/gallery" },
   ];
 
   const isActive = (href) => {
@@ -74,12 +74,12 @@ const Header = () => {
             <Button
               variant="ghost"
               size="sm"
-onClick={() => setIsSearchOpen(!isSearchOpen)}
+              onClick={() => setIsSearchOpen(!isSearchOpen)}
               className="p-2"
             >
               <ApperIcon name="Search" size={20} />
             </Button>
-            
+
             <Link to="/cart" className="relative">
               <Button variant="ghost" size="sm" className="p-2">
                 <ApperIcon name="ShoppingCart" size={20} />
@@ -91,50 +91,23 @@ onClick={() => setIsSearchOpen(!isSearchOpen)}
               </Button>
             </Link>
           </div>
-
-{/* Mobile menu button */}
-          <div className="lg:hidden flex items-center space-x-2">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2"
-            >
-              <ApperIcon name={isMenuOpen ? "X" : "Menu"} size={20} />
-            </Button>
-          </div>
         </div>
+      </div>
 
-</div>
-
-      {/* Mobile menu */}
+      {/* Search Overlay */}
       <AnimatePresence>
-        {isMenuOpen && (
+        {isSearchOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="lg:hidden border-t bg-white"
+            exit={{ opacity: 0, y: -10 }}
+            className="absolute top-full left-0 right-0 bg-white shadow-lg p-4"
           >
-<div className="px-4 py-2 space-y-1">
-              <div className="pb-2">
-                <SearchBar onSearch={handleSearch} />
-              </div>
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`block px-3 py-2 text-base font-medium rounded-md transition-colors ${
-                    isActive(item.href)
-                      ? "text-primary bg-primary/10"
-                      : "text-gray-700 hover:text-primary hover:bg-gray-50"
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
+            <SearchBar
+              onSearch={handleSearch}
+              onClose={() => setIsSearchOpen(false)}
+              autoFocus
+            />
           </motion.div>
         )}
       </AnimatePresence>
