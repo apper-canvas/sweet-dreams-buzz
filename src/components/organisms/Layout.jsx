@@ -1,47 +1,28 @@
 import { Outlet } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { AnimatePresence } from "framer-motion";
-import CartProvider from "@/hooks/CartProvider";
-import { useCart } from "@/hooks/CartProvider";
-import Header from "@/components/organisms/Header";
+import React from "react";
 import Footer from "@/components/organisms/Footer";
+import Header from "@/components/organisms/Header";
+import { CartProvider } from "@/hooks/CartProvider";
 
-const LayoutContent = () => {
-  const cart = useCart();
-
+function Layout() {
   return (
-    <div className="min-h-screen bg-background">
-      <AnimatePresence mode="wait">
+    <>
+      <CartProvider>
         <div className="min-h-screen flex flex-col">
           <Header />
           <main className="flex-1">
-            <Outlet context={cart} />
+            <AnimatePresence mode="wait">
+              <Outlet />
+            </AnimatePresence>
           </main>
           <Footer />
         </div>
-      </AnimatePresence>
-      <ToastContainer
-        position="top-right"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="colored"
-      />
-    </div>
+      </CartProvider>
+      <ToastContainer position="top-right" autoClose={3000} />
+    </>
   );
-};
-
-const Layout = () => {
-  return (
-    <CartProvider>
-      <LayoutContent />
-    </CartProvider>
-  );
-};
+}
 
 export default Layout;
