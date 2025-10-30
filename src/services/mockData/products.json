@@ -1,0 +1,222 @@
+[
+  {
+    "Id": 1,
+    "name": "Classic Chocolate Birthday Cake",
+    "category": "Birthday Cakes",
+    "description": "Rich, moist chocolate cake with smooth chocolate buttercream frosting. Perfect for any birthday celebration with customizable decorations.",
+    "basePrice": 45,
+    "images": [
+      "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=800&h=600&fit=crop"
+    ],
+    "sizes": [
+      { "name": "6 inch", "serves": "6-8", "price": 45 },
+      { "name": "8 inch", "serves": "12-15", "price": 65 },
+      { "name": "10 inch", "serves": "20-25", "price": 85 }
+    ],
+    "flavors": ["Chocolate", "Vanilla", "Strawberry", "Red Velvet"],
+    "dietary": ["Gluten-Free Available"],
+    "customizable": true,
+    "leadTime": 2,
+    "featured": true,
+    "popular": true
+  },
+  {
+    "Id": 2,
+    "name": "Elegant Three-Tier Wedding Cake",
+    "category": "Wedding Cakes",
+    "description": "A stunning three-tier wedding cake with delicate buttercream roses and elegant piping. Customizable to match your wedding theme.",
+    "basePrice": 350,
+    "images": [
+      "https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=800&h=600&fit=crop"
+    ],
+    "sizes": [
+      { "name": "Small (6-8-10)", "serves": "75-100", "price": 350 },
+      { "name": "Medium (8-10-12)", "serves": "100-125", "price": 450 },
+      { "name": "Large (10-12-14)", "serves": "150-200", "price": 650 }
+    ],
+    "flavors": ["Vanilla", "Chocolate", "Lemon", "Red Velvet", "Carrot"],
+    "dietary": ["Gluten-Free Available", "Sugar-Free Available"],
+    "customizable": true,
+    "leadTime": 14,
+    "featured": true,
+    "popular": false
+  },
+  {
+    "Id": 3,
+    "name": "Assorted Cupcake Box",
+    "category": "Cupcakes",
+    "description": "A delightful assortment of our most popular cupcake flavors, beautifully decorated with buttercream frosting and toppings.",
+    "basePrice": 36,
+    "images": [
+      "https://images.unsplash.com/photo-1599785209707-a456fc1337bb?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1587668178277-295251f900ce?w=800&h=600&fit=crop"
+    ],
+    "sizes": [
+      { "name": "Box of 12", "serves": "12", "price": 36 },
+      { "name": "Box of 24", "serves": "24", "price": 65 },
+      { "name": "Box of 36", "serves": "36", "price": 95 }
+    ],
+    "flavors": ["Chocolate", "Vanilla", "Strawberry", "Red Velvet", "Lemon"],
+    "dietary": ["Gluten-Free Available", "Vegan Available"],
+    "customizable": true,
+    "leadTime": 1,
+    "featured": false,
+    "popular": true
+  },
+  {
+    "Id": 4,
+    "name": "Fresh Fruit Tarts",
+    "category": "Pastries",
+    "description": "Individual pastry shells filled with vanilla custard and topped with fresh seasonal fruits. Light and refreshing dessert option.",
+    "basePrice": 4.5,
+    "images": [
+      "https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=800&h=600&fit=crop"
+    ],
+    "sizes": [
+      { "name": "Individual", "serves": "1", "price": 4.5 },
+      { "name": "Box of 6", "serves": "6", "price": 24 },
+      { "name": "Box of 12", "serves": "12", "price": 45 }
+    ],
+    "flavors": ["Vanilla Custard", "Chocolate Custard", "Lemon Curd"],
+    "dietary": ["Gluten-Free Available"],
+    "customizable": false,
+    "leadTime": 0,
+    "featured": false,
+    "popular": true
+  },
+  {
+    "Id": 5,
+    "name": "Red Velvet Layer Cake",
+    "category": "Birthday Cakes",
+    "description": "Classic red velvet cake with cream cheese frosting. Moist, flavorful, and beautifully striking with its signature red color.",
+    "basePrice": 50,
+    "images": [
+      "https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&h=600&fit=crop"
+    ],
+    "sizes": [
+      { "name": "6 inch", "serves": "6-8", "price": 50 },
+      { "name": "8 inch", "serves": "12-15", "price": 70 },
+      { "name": "10 inch", "serves": "20-25", "price": 90 }
+    ],
+    "flavors": ["Red Velvet", "Pink Velvet", "Blue Velvet"],
+    "dietary": ["Gluten-Free Available"],
+    "customizable": true,
+    "leadTime": 2,
+    "featured": true,
+    "popular": false
+  },
+  {
+    "Id": 6,
+    "name": "Chocolate Croissants",
+    "category": "Pastries",
+    "description": "Buttery, flaky croissants filled with rich dark chocolate. Perfect for breakfast or an afternoon treat.",
+    "basePrice": 3.5,
+    "images": [
+      "https://images.unsplash.com/photo-1555507036-ab794f27a456?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1549903072-7e6e0bedb7fb?w=800&h=600&fit=crop"
+    ],
+    "sizes": [
+      { "name": "Individual", "serves": "1", "price": 3.5 },
+      { "name": "Box of 6", "serves": "6", "price": 18 },
+      { "name": "Box of 12", "serves": "12", "price": 33 }
+    ],
+    "flavors": ["Dark Chocolate", "Almond", "Plain"],
+    "dietary": ["Vegan Available"],
+    "customizable": false,
+    "leadTime": 0,
+    "featured": false,
+    "popular": true
+  },
+  {
+    "Id": 7,
+    "name": "Vanilla Bean Cheesecake",
+    "category": "Pastries",
+    "description": "Creamy New York-style cheesecake with real vanilla bean and graham cracker crust. Rich and indulgent dessert.",
+    "basePrice": 55,
+    "images": [
+      "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=800&h=600&fit=crop"
+    ],
+    "sizes": [
+      { "name": "6 inch", "serves": "6-8", "price": 55 },
+      { "name": "8 inch", "serves": "12-15", "price": 75 },
+      { "name": "10 inch", "serves": "20-25", "price": 95 }
+    ],
+    "flavors": ["Vanilla Bean", "Chocolate", "Strawberry", "Blueberry"],
+    "dietary": ["Gluten-Free Available", "Sugar-Free Available"],
+    "customizable": true,
+    "leadTime": 1,
+    "featured": false,
+    "popular": false
+  },
+  {
+    "Id": 8,
+    "name": "Custom Anniversary Cake",
+    "category": "Custom Orders",
+    "description": "Personalized anniversary cake designed to celebrate your special milestone. Completely customizable design, size, and flavors.",
+    "basePrice": 75,
+    "images": [
+      "https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=800&h=600&fit=crop"
+    ],
+    "sizes": [
+      { "name": "6 inch", "serves": "6-8", "price": 75 },
+      { "name": "8 inch", "serves": "12-15", "price": 95 },
+      { "name": "10 inch", "serves": "20-25", "price": 125 }
+    ],
+    "flavors": ["Vanilla", "Chocolate", "Lemon", "Red Velvet", "Carrot", "Strawberry"],
+    "dietary": ["Gluten-Free Available", "Sugar-Free Available", "Vegan Available"],
+    "customizable": true,
+    "leadTime": 7,
+    "featured": false,
+    "popular": false
+  },
+  {
+    "Id": 9,
+    "name": "Macarons Gift Box",
+    "category": "Pastries",
+    "description": "Delicate French macarons in various flavors, beautifully presented in an elegant gift box. Perfect for special occasions.",
+    "basePrice": 24,
+    "images": [
+      "https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&h=600&fit=crop"
+    ],
+    "sizes": [
+      { "name": "Box of 12", "serves": "12", "price": 24 },
+      { "name": "Box of 24", "serves": "24", "price": 42 },
+      { "name": "Box of 36", "serves": "36", "price": 58 }
+    ],
+    "flavors": ["Vanilla", "Chocolate", "Raspberry", "Lemon", "Pistachio", "Rose"],
+    "dietary": ["Gluten-Free"],
+    "customizable": false,
+    "leadTime": 2,
+    "featured": false,
+    "popular": true
+  },
+  {
+    "Id": 10,
+    "name": "Unicorn Theme Birthday Cake",
+    "category": "Birthday Cakes",
+    "description": "Magical unicorn-themed cake with rainbow layers, buttercream frosting, and edible unicorn decorations. Perfect for children's parties.",
+    "basePrice": 65,
+    "images": [
+      "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=800&h=600&fit=crop"
+    ],
+    "sizes": [
+      { "name": "6 inch", "serves": "6-8", "price": 65 },
+      { "name": "8 inch", "serves": "12-15", "price": 85 },
+      { "name": "10 inch", "serves": "20-25", "price": 105 }
+    ],
+    "flavors": ["Rainbow", "Vanilla", "Strawberry", "Funfetti"],
+    "dietary": ["Gluten-Free Available"],
+    "customizable": true,
+    "leadTime": 3,
+    "featured": true,
+    "popular": true
+  }
+]

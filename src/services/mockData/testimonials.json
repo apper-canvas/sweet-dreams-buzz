@@ -1,0 +1,56 @@
+[
+  {
+    "Id": 1,
+    "customerName": "Sarah Johnson",
+    "rating": 5,
+    "review": "Sweet Dreams created the most beautiful wedding cake for our special day. The attention to detail was incredible, and it tasted even better than it looked!",
+    "date": "2024-01-15",
+    "orderType": "Wedding Cake",
+    "featured": true
+  },
+  {
+    "Id": 2,
+    "customerName": "Mike Chen",
+    "rating": 5,
+    "review": "Ordered a custom birthday cake for my daughter's unicorn party. The kids were absolutely amazed, and the cake was delicious. Highly recommend!",
+    "date": "2024-01-20",
+    "orderType": "Birthday Cake",
+    "featured": true
+  },
+  {
+    "Id": 3,
+    "customerName": "Emily Rodriguez",
+    "rating": 4,
+    "review": "The cupcakes were fresh and beautifully decorated. Perfect for our office party. Great variety of flavors too!",
+    "date": "2024-01-25",
+    "orderType": "Cupcakes",
+    "featured": false
+  },
+  {
+    "Id": 4,
+    "customerName": "David Thompson",
+    "rating": 5,
+    "review": "Amazing pastries! The fruit tarts were a hit at our event. Professional service and quality ingredients. Will definitely order again.",
+    "date": "2024-02-01",
+    "orderType": "Pastries",
+    "featured": true
+  },
+  {
+    "Id": 5,
+    "customerName": "Lisa Wang",
+    "rating": 5,
+    "review": "The custom anniversary cake exceeded our expectations. Beautiful design and incredible taste. Thank you for making our celebration special!",
+    "date": "2024-02-05",
+    "orderType": "Custom Order",
+    "featured": false
+  },
+  {
+    "Id": 6,
+    "customerName": "Robert Martinez",
+    "rating": 4,
+    "review": "Great selection of cakes and very accommodating for dietary restrictions. The gluten-free options were surprisingly delicious!",
+    "date": "2024-02-10",
+    "orderType": "Birthday Cake",
+    "featured": false
+  }
+]
