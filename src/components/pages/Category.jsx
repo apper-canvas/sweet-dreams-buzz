@@ -73,7 +73,7 @@ const Category = () => {
               {categoryName}
             </h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Explore our collection of {categoryName.toLowerCase()} made with love and finest ingredients.
+Explore our collection of {categoryName?.toLowerCase() || 'products'} made with love and finest ingredients.
             </p>
           </motion.div>
         </div>
