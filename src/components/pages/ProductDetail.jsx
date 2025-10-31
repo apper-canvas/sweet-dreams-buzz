@@ -21,14 +21,24 @@ const ProductDetail = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const { addToCart } = useCart();
 
-  const loadProduct = async () => {
+const loadProduct = async () => {
     try {
       setLoading(true);
       setError(null);
       const data = await productService.getById(productId);
-      setProduct(data);
-      setSelectedSize(data.sizes[0]);
-      setSelectedFlavor(data.flavors[0]);
+      
+      // Parse JSON fields that are stored as strings
+      const parsedProduct = {
+        ...data,
+        images_c: data.images_c ? JSON.parse(data.images_c) : [],
+        sizes_c: data.sizes_c ? JSON.parse(data.sizes_c) : [],
+        flavors_c: data.flavors_c ? JSON.parse(data.flavors_c) : [],
+        dietary_c: data.dietary_c ? JSON.parse(data.dietary_c) : []
+      };
+      
+      setProduct(parsedProduct);
+      setSelectedSize(parsedProduct.sizes_c[0]);
+      setSelectedFlavor(parsedProduct.flavors_c[0]);
     } catch (err) {
       setError(err.message);
     } finally {
@@ -43,17 +53,17 @@ const ProductDetail = () => {
   const handleAddToCart = () => {
     if (!product) return;
 
-    const customization = {
+const customization = {
       size: selectedSize?.name,
       flavor: selectedFlavor,
-      totalPrice: selectedSize?.price || product.basePrice
+      totalPrice: selectedSize?.price || product.base_price_c
     };
 
     addToCart(product, customization, quantity);
   };
 
   const getCurrentPrice = () => {
-    return selectedSize?.price || product.basePrice;
+    return selectedSize?.price || product.base_price_c;
   };
 
   if (loading) return <Loading />;
@@ -65,14 +75,14 @@ const ProductDetail = () => {
       {/* Breadcrumb */}
       <div className="bg-surface py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="flex items-center space-x-2 text-sm">
+<nav className="flex items-center space-x-2 text-sm">
             <Link to="/" className="text-gray-500 hover:text-primary">Home</Link>
             <ApperIcon name="ChevronRight" size={16} className="text-gray-400" />
-            <Link to={`/category/${product.category}`} className="text-gray-500 hover:text-primary">
-              {product.category}
+            <Link to={`/category/${product.category_c}`} className="text-gray-500 hover:text-primary">
+              {product.category_c}
             </Link>
             <ApperIcon name="ChevronRight" size={16} className="text-gray-400" />
-            <span className="text-gray-900">{product.name}</span>
+            <span className="text-gray-900">{product.name_c}</span>
           </nav>
         </div>
       </div>
@@ -85,19 +95,19 @@ const ProductDetail = () => {
             animate={{ opacity: 1, x: 0 }}
             className="space-y-4"
           >
-            <Card className="overflow-hidden">
+<Card className="overflow-hidden">
               <div className="aspect-square">
                 <img
-                  src={product.images[currentImageIndex]}
-                  alt={product.name}
+                  src={product.images_c[currentImageIndex]}
+                  alt={product.name_c}
                   className="w-full h-full object-cover"
                 />
               </div>
             </Card>
             
-            {product.images.length > 1 && (
+{product.images_c.length > 1 && (
               <div className="flex space-x-2">
-                {product.images.map((image, index) => (
+                {product.images_c.map((image, index) => (
                   <button
                     key={index}
                     onClick={() => setCurrentImageIndex(index)}
@@ -107,7 +117,7 @@ const ProductDetail = () => {
                   >
                     <img
                       src={image}
-                      alt={`${product.name} ${index + 1}`}
+                      alt={`${product.name_c} ${index + 1}`}
                       className="w-full h-full object-cover"
                     />
                   </button>
@@ -122,19 +132,19 @@ const ProductDetail = () => {
             animate={{ opacity: 1, x: 0 }}
             className="space-y-6"
           >
-            <div>
+<div>
               <div className="flex items-center gap-2 mb-2">
-                {product.featured && <Badge variant="primary">Featured</Badge>}
-                {product.popular && <Badge variant="accent">Popular</Badge>}
-                {product.customizable && <Badge variant="secondary">Customizable</Badge>}
+                {product.featured_c && <Badge variant="primary">Featured</Badge>}
+                {product.popular_c && <Badge variant="accent">Popular</Badge>}
+                {product.customizable_c && <Badge variant="secondary">Customizable</Badge>}
               </div>
               
               <h1 className="font-display text-3xl font-bold text-gray-900 mb-2">
-                {product.name}
+                {product.name_c}
               </h1>
               
               <p className="text-gray-600 text-lg">
-                {product.description}
+                {product.description_c}
               </p>
             </div>
 
@@ -143,15 +153,15 @@ const ProductDetail = () => {
                 ${getCurrentPrice()}
               </div>
               <div className="text-sm text-gray-600">
-                Lead time: {product.leadTime} days
+                Lead time: {product.lead_time_c} days
               </div>
             </div>
 
-            {/* Size Selection */}
+{/* Size Selection */}
             <div>
               <h3 className="font-medium text-gray-900 mb-3">Size & Servings</h3>
               <div className="grid grid-cols-1 gap-2">
-                {product.sizes.map((size) => (
+                {product.sizes_c.map((size) => (
                   <button
                     key={size.name}
                     onClick={() => setSelectedSize(size)}
@@ -175,11 +185,11 @@ const ProductDetail = () => {
               </div>
             </div>
 
-            {/* Flavor Selection */}
+{/* Flavor Selection */}
             <div>
               <h3 className="font-medium text-gray-900 mb-3">Flavor</h3>
               <div className="grid grid-cols-2 gap-2">
-                {product.flavors.map((flavor) => (
+                {product.flavors_c.map((flavor) => (
                   <button
                     key={flavor}
                     onClick={() => setSelectedFlavor(flavor)}
@@ -195,12 +205,12 @@ const ProductDetail = () => {
               </div>
             </div>
 
-            {/* Dietary Info */}
-            {product.dietary.length > 0 && (
+{/* Dietary Info */}
+            {product.dietary_c.length > 0 && (
               <div>
                 <h3 className="font-medium text-gray-900 mb-3">Dietary Options</h3>
                 <div className="flex flex-wrap gap-2">
-                  {product.dietary.map((diet) => (
+                  {product.dietary_c.map((diet) => (
                     <Badge key={diet} variant="success">
                       {diet}
                     </Badge>
@@ -244,9 +254,9 @@ const ProductDetail = () => {
                 >
                   <ApperIcon name="ShoppingCart" size={20} className="mr-2" />
                   Add to Cart - ${(getCurrentPrice() * quantity).toFixed(2)}
-                </Button>
+</Button>
                 
-                {product.customizable && (
+                {product.customizable_c && (
                   <Button
                     variant="outline"
                     size="lg"

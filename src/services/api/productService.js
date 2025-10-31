@@ -55,7 +55,7 @@ export const productService = {
     }
   },
 
-  getById: async (id) => {
+getById: async (id) => {
     try {
       const apperClient = getApperClient();
       if (!apperClient) {
